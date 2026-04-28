@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MedGuard APK Download</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #93c5fd, #4A70A9);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+    }
+
+    .card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    h1 {
+      margin-bottom: 5px;
+      color: #4A70A9;
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    #qrcode {
+      margin: 20px auto;
+      padding: 15px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      display: inline-block;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 22px;
+      background: #4A70A9;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #4A70A9;
+      transform: scale(1.05);
+    }
+
+    .note {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #999;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>MedGuard</h1>
+    <p>Scan the QR code or click download to install the APK</p>
+
+    <div id="qrcode"></div>
+
+    <br/>
+
+    <a id="download" class="btn" href="#" target="_blank">
+      Download APK
+    </a>
+
+    <div class="note">
+      Make sure “Install from unknown sources” is enabled on your device
+    </div>
+  </div>
+
+  <script>
+    const apkUrl = "https://expo.dev/accounts/medguard/projects/MedGuard/builds/df9417c6-50a4-49f0-b5ac-6bd7150f1b96";
+
+    document.getElementById("download").href = apkUrl;
+
+    new QRCode(document.getElementById("qrcode"), {
+      text: apkUrl,
+      width: 180,
+      height: 180
+    });
+  </script>
+
+</body>
+</html>
